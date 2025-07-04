@@ -1,5 +1,5 @@
 # BeamLoRA
-Here is the implementation of our ACL2025 paper "BeamLoRA: Beam-Constraint Low-Rank Adaptation".
+Here is the implementation of our ACL2025 paper "[BeamLoRA: Beam-Constraint Low-Rank Adaptation](https://arxiv.org/abs/2502.13604)".
 ![BeamLoRA](./assets/beamlora.png)
 ## Setup
 
