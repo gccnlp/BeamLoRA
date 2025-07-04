@@ -1,9 +1,10 @@
 # BeamLoRA
 Here is the implementation of our ACL2025 paper "BeamLoRA: Beam-Constraint Low-Rank Adaptation".
+![BeamLoRA](./assets/beamlora.png)
 ## Setup
 
 ```bash
-## Training Environment (beamloRA)
+## Training Environment (beamlora)
 pip install -r requirements-train.txt
 cd peft
 pip install -e .
