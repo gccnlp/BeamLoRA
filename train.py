@@ -735,9 +735,6 @@ def train(
         only_pruning: bool = False,
         constant_K: bool = False,
         do_nothing: bool = False,
-        #transfer
-        ffn_neuron_dropout: float = 0.0,
-        ffn_layer_dropout: float = 0.0,
 ):
     global SAVE_PATH
     global save_merged_model_ckpt
@@ -861,11 +858,6 @@ def train(
         from transformers import BitsAndBytesConfig
         torch_dtype = torch.bfloat16 if use_bf16 else torch.float16
         config=None
-        if ffn_neuron_dropout!=0 or ffn_layer_dropout!=0:
-            config = AutoConfig.from_pretrained(base_model,trust_remote_code=True)
-            config.ffn_neuron_dropout=ffn_neuron_dropout
-            config.ffn_layer_dropout=ffn_layer_dropout
-            print(config)
         model = MODEL_CLASS.from_pretrained(
             base_model,
             load_in_8bit=False if full_ft or (deepspeed and 'ds3' in deepspeed) or use_16bit else True, # if use zero3 not quantize
